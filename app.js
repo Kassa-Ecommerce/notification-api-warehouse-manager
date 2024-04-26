@@ -71,6 +71,6 @@ app.post("/send", function (req, res) {
 
 });
 
-app.listen(process.env.PORT || 8000, function () {
-    console.log(`Server started on port ${process.env.PORT || 8000}`);
+app.listen(process.env.PORT || 8001, function () {
+    console.log(`Server started on port ${process.env.PORT || 8001}`);
 });
