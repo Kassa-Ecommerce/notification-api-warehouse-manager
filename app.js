@@ -1,10 +1,10 @@
-import {initializeApp} from 'firebase-admin/app';
-import {getMessaging} from "firebase-admin/messaging";
+import { initializeApp } from 'firebase-admin/app';
+import { getMessaging } from "firebase-admin/messaging";
 import express from "express";
 import cors from "cors";
 import admin from "firebase-admin";
-import serviceAccount from "./service-account.json" assert {type: "json"};
-
+import { readFileSync } from "fs";
+const serviceAccount = JSON.parse(readFileSync("./service-account.json"));
 const PROJECT_ID = 'smart-warehouse-manager';
 
 
@@ -25,7 +25,7 @@ app.use(
     })
 );
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     res.setHeader("Content-Type", "application/json");
     next();
 });
@@ -72,5 +72,5 @@ app.post("/send", function (req, res) {
 });
 
 app.listen(process.env.PORT || 8000, function () {
-    console.log(`Server started on port ${process.env.PORT|| 8000}`);
+    console.log(`Server started on port ${process.env.PORT || 8000}`);
 });
