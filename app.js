@@ -3,7 +3,7 @@ import {getMessaging} from "firebase-admin/messaging";
 import express from "express";
 import cors from "cors";
 import admin from "firebase-admin";
-import serviceAccount from "./service-account.json" with {type: "json"};
+import serviceAccount from "./service-account.json" assert {type: "json"};
 
 const PROJECT_ID = 'smart-warehouse-manager';
 
