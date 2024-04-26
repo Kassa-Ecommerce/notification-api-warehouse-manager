@@ -1,1 +1,1 @@
-node --experimental-json-modules app.js
+nohup node --experimental-json-modules app.js &
